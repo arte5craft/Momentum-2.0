@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="icon" href="assets/img/wired-lineal-298-coins.png">
+    <title>Momentum</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/login.css" />
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+        <!-- *******************************************************************************************
+         * TODO(DEVELOPER): Paste the initialization snippet from this dialog box:
+         * Firebase Console > Project Settings > Add App > Web.
+         ***************************************************************************************** -->
+         <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/sign-in.css" />
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyDjE2h79QhX1ISiLWAyRZGrsQPO4bymJew",
+                authDomain: "hackathon-d0863.firebaseapp.com",
+                projectId: "hackathon-d0863",
+                storageBucket: "hackathon-d0863.appspot.com",
+                messagingSenderId: "720368335999",
+                appId: "1:720368335999:web:2351f6e50ae1c1d68f534a",
+                measurementId: "G-T1D63FBZY1"
+            };
+
+            // Initialize Firebase
+            var app = firebase.initializeApp(firebaseConfig);
+
+            // FirebaseUI config.
+            var uiConfig = {
+                signInSuccessUrl: "index.html",
+                signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                ],
+                // tosUrl and privacyPolicyUrl accept either url string or a callback
+                // function.
+                // Terms of service url/callback.
+                tosUrl: "<your-tos-url>",
+                // Privacy policy url/callback.
+                privacyPolicyUrl: function () {
+                window.location.assign("<your-privacy-policy-url>");
+                },
+            };
+
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            // The start method will wait until the DOM is loaded.
+            ui.start("#firebaseui-auth-container", uiConfig);
+        </script>
+</head>
+
+<body>
+    <main class="bg-light">
+        <div class="container">
+            <div class="inner-box row">
+                <div class="forms-wrap col-md-6">
+                    <div id="firebaseui-auth-container"></div>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/img/alt-features.png" alt="phone" height=720px>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+
+</html>
