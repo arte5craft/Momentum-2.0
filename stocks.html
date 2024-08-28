@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Momentum - Home</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="icon" href="assets/img/wired-lineal-298-coins.png">
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Main CSS File -->
+        <link href="assets/css/style.css" rel="stylesheet">
+
+        <!-- Firebase authentication -->
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+
+        <script type="text/javascript">
+            const firebaseConfig = {
+                apiKey: "AIzaSyDjE2h79QhX1ISiLWAyRZGrsQPO4bymJew",
+                authDomain: "hackathon-d0863.firebaseapp.com",
+                projectId: "hackathon-d0863",
+                storageBucket: "hackathon-d0863.appspot.com",
+                messagingSenderId: "720368335999",
+                appId: "1:720368335999:web:2351f6e50ae1c1d68f534a",
+                measurementId: "G-T1D63FBZY1"
+            };
+
+            var uid;
+            var app = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            initApp = function() {
+                firebase.auth().onAuthStateChanged((user) => {
+                    if (user) {
+                        // User is signed in.
+                        console.log('User signed in:', user);
+                    } else {
+                        // User is signed out.
+                        window.location.href = "login.html";
+                    }
+                });
+            };
+
+            window.addEventListener("load", function() {
+                initApp();
+            });
+        </script>
+      </head>
+    <body>
+
+
+        
+<!-- Light/Dark mode-->
+<div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox"/>
+      <div class="slider round"></div>
+      <span class="decoration"></span>
+    </label>
+  </div>
+
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <h1 class="logo"> <img src="assets/img/wordlogo-removebg-preview.png"> </h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home<br></a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="stocks.html" class="active">Stock Market</a></li>
+                    <li><a href="login.html">Log out</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+        </header>
+        <div style="height:70px; width: 100%; margin-bottom: 40px;"></div>
+
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+            "symbols": [
+            {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500 Index"
+            },
+            {
+                "description": "NIFTY 50",
+                "proName": "NSE:NIFTY"
+            },
+            {
+                "description": "Bitcoin",
+                "proName": "COINBASE:BTCUSD"
+            },
+            {
+                "description": "NVDIA",
+                "proName": "NASDAQ:NVDA"
+            }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "displayMode": "adaptive",
+            "colorTheme": "dark",
+            "locale": "en"
+        }
+            </script>
+        </div>
+         <!-- TradingView Widget END -->
+
+        <div style="height:40px;width:100%"></div>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="container-fluid d-flex justify-content-center align-items-center tradingview-widget-container" style="height:900px;width:100%;">
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+            {
+                "width": "1020",
+                "height": "610",
+                "symbol": "NASDAQ:AAPL",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "allow_symbol_change": true,
+                "calendar": false,
+                "support_host": "https://www.tradingview.com"
+        }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <div style="height:40px;width:100%"></div>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="container-fluid d-flex justify-content-center align-items-center tradingview-widget-container tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+            {
+            "colorTheme": "dark",
+            "isTransparent": false,
+            "width": "1020",
+            "height": "610",
+            "locale": "en",
+            "importanceFilter": "-1,0,1",
+            "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+        }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <div style="height:40px;width:100%"></div>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+            {
+            "feedMode": "all_symbols",
+            "isTransparent": false,
+            "displayMode": "adaptive",
+            "width": "100%",
+            "height": "100%",
+            "colorTheme": "dark",
+            "locale": "en"
+        }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/index.js"></script>
+
+        <!-- BotPress -->
+
+        <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+        <script src="https://mediafiles.botpress.cloud/aa40fdce-bc29-4466-bf20-d9b1478cb2a9/webchat/v2.1/config.js"></script>
+
+    </body>
+</html>
