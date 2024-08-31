@@ -50,7 +50,7 @@
                   console.log('User signed in:', user);
               } else {
                   // User is signed out.
-                  window.location.href = "login.html";
+                  document.location.href = "login.html";
               }
           });
       };
@@ -66,16 +66,16 @@
       <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto">
-              <h1 class="logo"> <img src="assets/img/Capture-final-removebg-preview.png"> </h1>
-            </a>
+          <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <h1 class="logo"> <img src="assets/img/Capture-final-removebg-preview.png"> </h1>
+          </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a class="active">Home<br></a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="stocks.html">Stock Market</a></li>
-                    <li><a href="login.html">Log out</a></li>
+                    <li><a href="login.html">Sign out</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -108,8 +108,15 @@
             <span>Literacy</span>
           </div>
         </div>
+      </section>
+
+      <section class="section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Financial Literacy</h2>
+          <p>The Main Problem<br></p>
+        </div>
           <div class="box" id="debt1">
-            <div id="graph" style="width: 50%; margin: auto;">
+            <div id="graph" style="width: 45%; padding: auto;">
               <canvas id="financialLiteracyChart"></canvas>
           </div>
 
@@ -180,7 +187,6 @@
                   }
               });
           </script>
-              <h2>Financial Literacy Among Students</h2>
               <ul style="text-align: left">
                 <li>According to a survey on Global Financial Literacy in 2012 conducted by VISA, only 35% of Indians were financially literate and India was among the least financially literate countries.</li>
                 <li>Kiliyanni and Sivaraman (2016) measured financial literacy among educated young adults in the Indian state of Kerala and found that they were able to answer only 44% of the questions on the survey correctly.</li>
@@ -212,7 +218,7 @@
                           <p>Providing tools and knowledge to help students take control of their financial futures with confidence.</p>
                       </div>
                   </div>
-                  
+                  <!-- End Card Item -->
 
                   <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                       <div class="cards">
@@ -221,7 +227,7 @@
                           <p>Offering accessible, practical information on budgeting, saving, and investing to build a solid financial foundation.</p>
                       </div>
                   </div>
-                  
+                  <!-- End Card Item -->
 
                   <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                       <div class="cards">
@@ -230,10 +236,13 @@
                           <p>Creating a community where students can seek guidance, share experiences, and receive encouragement as they navigate their financial journeys.</p>
                       </div>
                   </div>
-              </div>
-          </div>
-      </section>
+                  <!-- End Card Item -->
 
+              </div>
+
+          </div>
+
+      </section>
 
       <!-- Services Section -->
       <section id="service" class="service section">
@@ -244,105 +253,108 @@
               <p>Check Our Services<br></p>
           </div>
           <!-- End Section Title -->
-    
-        <div class="container">
+
+          <div class="container">
 
             <div class="row gy-4">
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cards">
-                        <h3>Budgeting Tool</h3>
-                        <p>A budgeting tool helps students manage their finances by tracking income, expenses, and savings. It provides a clear overview of where their money is going, helping them make informed decisions, avoid overspending, and set financial goals.</p>
-                    </div>
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item item-cyan position-relative">
+                  <i class="bi bi-activity icon"></i>
+                  <h3>Stock Market Information</h3>
+                  <p>Access to stock market information allows students to stay informed about market trends and investment opportunities. This knowledge is crucial for those interested in investing, helping them make better decisions about buying or selling stocks.</p>
                 </div>
-              
+              </div><!-- End Service Item -->
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cards">
-                        <h3>AI Budget Buddy</h3>
-                        <p>An AI Budget Buddy can provide personalized financial advice, making it easier for students to manage their money effectively. It can offer tips on budgeting, saving, and investing based on individual spending patterns and goals. With its knowledge of investing, it can help students learn how to grow their money over time.</p>
-                    </div>
-                </div>
-              
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item item-teal position-relative">
+                  <i class="bi bi-easel icon"></i>
+                  <h3>Budgeting Tool</h3>
+                  <p>A budgeting tool helps students manage their finances by tracking income, expenses, and savings. It provides a clear overview of where their money is going, helping them make informed decisions, avoid overspending, and set financial goals.</p>
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cards">
-                      
-                        <h3>Stock Market Information</h3>
-                        <p>Access to stock market information allows students to stay informed about market trends and investment opportunities. This knowledge is crucial for those interested in investing, helping them make better decisions about buying or selling stocks.</p>
-                    </div>
                 </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item item-pink position-relative">
+                  <i class="bi bi-chat-square-text icon"></i>
+                  <h3>AI Budget Buddy</h3>
+                  <p>An AI Budget Buddy can provide personalized financial advice, making it easier for students to manage their money effectively. It can offer tips on budgeting, saving, and investing based on individual spending patterns and goals. With its knowledge of investing, it can help students learn how to grow their money over time.</p>
+
+                </div>
+              </div><!-- End Service Item -->
+
             </div>
-        </div>
-      </section>
+
+          </div>
+
+    </section>
 
 
-<!-- testimonials -->
 
       <section class="section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Personal Experiences</h2>
           <p>What others have to say<br></p>
         </div>
-        
-    <div class="card-row"> 
-      <div class="card-container">
-        <div class="card">
-        <div class="front-content">
-          <p> Meet Rahul</p>
-      </div>
-        <div class="content">
-          <p class="heading">Rahul</p>
-          <p>
-            I realised the biggest mistake I made after I started using this tool. It's Life changing!
-          </p>
-        </div>
-      </div>
-      </div>
 
-      
-      <div class="card-container">
-        <div class="card">
-        <div class="front-content">
-          <p>Meet Geremy</p>
-        </div>
-        <div class="content">
-          <p class="heading">Geremy</p>
-          <p>
-            This budget tracker has transformed my finances! It's easy to use, provides clear insights, and has helped me save more and manage my spending better. Highly recommend it!
-        </div>
-      </div>
-      </div>
+        <div class="card-row">
+          <div class="card-container" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+            <div class="front-content">
+              <p> Meet Rahul</p>
+            </div>
+            <div class="content">
+              <p class="heading">Rahul</p>
+              <p>
+                I realised the biggest mistake I made after I started using this tool. It's Life changing!
+              </p>
+            </div>
+          </div>
+          </div>
 
-      
-      <div class="card-container">
-        <div class="card">
-        <div class="front-content">
-          <p>Meet Hannah</p>
-        </div>
-        <div class="content">
-          <p class="heading">Hannah</p>
-          <p>
-            “This budget tracker is fantastic! It’s simple, effective, and has made budgeting effortless, helping me save more and track my spending with ease. I couldn’t be happier!”
-          </p>
-        </div>
-      </div>
-      </div>
 
-    </div>
+          <div class="card-container" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+            <div class="front-content">
+              <p>Meet Geremy</p>
+            </div>
+            <div class="content">
+              <p class="heading">Geremy</p>
+              <p>
+                This budget tracker has transformed my finances! It's easy to use, provides clear insights, and has helped me save more and manage my spending better. Highly recommend it!
+            </div>
+          </div>
+          </div>
+
+
+          <div class="card-container" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+            <div class="front-content">
+              <p>Meet Hannah</p>
+            </div>
+            <div class="content">
+              <p class="heading">Hannah</p>
+              <p>
+                “This budget tracker is fantastic! It’s simple, effective, and has made budgeting effortless, helping me save more and track my spending with ease. I couldn’t be happier!”
+              </p>
+            </div>
+          </div>
+          </div>
+
+        </div>
 
       </section>
-
-
-
 
 
       <!-- Team Section -->
       <section id="team" class="team section">
 
+        <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
               <h2>Team</h2>
           </div>
+          <!-- End Section Title -->
 
           <div class="container">
 
@@ -393,8 +405,8 @@
           </section>
         <!-- Scroll Top -->
         <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-         
-        
+
+
         <!-- Light/Dark mode-->
         <div class="theme-switch-wrapper">
           <label class="theme-switch" for="checkbox">
